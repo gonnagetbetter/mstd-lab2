@@ -83,7 +83,7 @@ class List {
         this.#list.push(list.getElement(i));
       }
     return this.#list;
-  } else throw new Error('Error. Your item must be instance of list to extend it.);
+  } else throw new Error('Error. Your item must be instance of list to extend it.');
 }
 }
 
