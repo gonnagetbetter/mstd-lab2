@@ -77,12 +77,14 @@ class List {
   }
 
   extend(list) {
-    for (let i = 0; i < list.getLength(); i++) {
-      this.isChar(list.getElement(i));
-      this.#list.push(list.getElement(i));
-    }
+    if (list instanceof List) {
+      for (let i = 0; i < list.getLength(); i++) {
+        this.isChar(list.getElement(i));
+        this.#list.push(list.getElement(i));
+      }
     return this.#list;
-  }
+  } else throw new Error('Your item must be instance of list to extend it.');
+}
 }
 
 module.exports = List;
